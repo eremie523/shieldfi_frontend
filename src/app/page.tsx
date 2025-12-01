@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { BuyCoverage } from "@/components/buy-coverage"
 import { Dashboard } from "@/components/dashboard"
-import { AdminPanel } from "@/components/admin-panel"
+// import { AdminPanel } from "@/components/admin-panel"
 import { PolicyProvider } from "@/context/policy"
 
 export default function Home() {
