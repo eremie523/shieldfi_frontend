@@ -1,0 +1,381 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_policyId",
+				"type": "uint256"
+			}
+		],
+		"name": "makeClaim",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_shieldFI_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "dataFeed",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_claimQueue",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_policyManager",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "OwnableInvalidOwner",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "OwnableUnauthorizedAccount",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "POLICY_OWNER_REQUIRED",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum RiskCategory",
+				"name": "_category",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum AllowedStableCoins",
+				"name": "stable_coin",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_coverageAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_coveragePeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "purchasePolicy",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum AllowedStableCoins",
+				"name": "stable_coin",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_exploits",
+				"type": "uint256"
+			}
+		],
+		"name": "updateInternalFeed",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawFromTokenPool",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPoliciesAvailable",
+		"outputs": [
+			{
+				"internalType": "string[3]",
+				"name": "",
+				"type": "string[3]"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum AllowedStableCoins",
+				"name": "stable_coin",
+				"type": "uint8"
+			},
+			{
+				"internalType": "enum RiskCategory",
+				"name": "_category",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_coverageAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_coveragePeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "getPremiumForPolicy",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getShieldFITokenPool",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getStableCoinListings",
+		"outputs": [
+			{
+				"internalType": "string[2]",
+				"name": "",
+				"type": "string[2]"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum AllowedStableCoins",
+				"name": "stable_coin",
+				"type": "uint8"
+			}
+		],
+		"name": "getTokenPrice",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewMyClaims",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewMyPolicies",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "holder",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "coverage",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "premium",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "premium_rate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "coverage_period",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum PolicyStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum AllowedStableCoins",
+						"name": "stable_coin",
+						"type": "uint8"
+					},
+					{
+						"internalType": "enum RiskCategory",
+						"name": "risk_cat",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "start_time",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "end_time",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "last_premium_payment",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "initial_stable_coin_price",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Policy[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
